@@ -6,8 +6,8 @@ export default {
       colors: {
         "gray-brand": "#f6f6f6",
         "brown-brand": "#383838",
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

@@ -9,6 +9,7 @@ This repository contains the following components:
 - Button.
 - Spinner.
 - Input.
+- Select.
 
 ## Built with:
 
