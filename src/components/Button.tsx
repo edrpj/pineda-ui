@@ -13,6 +13,9 @@ const buttonStyles = cva("w-48 h-12 font-medium", {
       tertiary: "bg-orange-500 text-white hover:bg-orange-400",
       "outline-tertiary":
         "bg-white text-orange-500 border border-orange-500 hover:border-orange-700 hover:text-orange-700",
+      quaternary: "bg-indigo-500 text-white hover:bg-indigo-400",
+      "outline-quaternary":
+        "bg-white text-indigo-500 border border-indigo-500 hover:border-indigo-700 hover:text-indigo-700",
     },
     fullWidth: {
       true: "w-full",
@@ -31,7 +34,7 @@ const buttonStyles = cva("w-48 h-12 font-medium", {
 
 interface Props extends VariantProps<typeof buttonStyles> {
   label: string;
-  intent?: "primary" | "outline-primary" | "secondary" | "outline-secondary" | "tertiary" | "outline-tertiary" ;
+  intent?: "primary" | "outline-primary" | "secondary" | "outline-secondary" | "tertiary" | "outline-tertiary" | "quaternary" | "outline-quaternary";
   fullWidth?: boolean;
   roundedFull?: boolean;
   className?: string;

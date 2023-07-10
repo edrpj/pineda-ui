@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../components/Button";
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: "UI/Button",
   component: Button,
   args: {
@@ -17,13 +17,15 @@ const meta = {
         "outline-secondary",
         "tertiary",
         "outline-tertiary",
+        "quaternary",
+        "outline-quaternary",
       ],
     },
   },
-} satisfies Meta<typeof Button>;
+} 
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
@@ -59,5 +61,17 @@ export const Tertiary: Story = {
 export const OutlineTertiary: Story = {
   args: {
     intent: "outline-tertiary",
+  },
+};
+
+export const Quaternay: Story = {
+  args: {
+    intent: "quaternary",
+  },
+};
+
+export const OutlineQuaternary: Story = {
+  args: {
+    intent: "outline-quaternary",
   },
 };
