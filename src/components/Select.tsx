@@ -13,13 +13,14 @@ const Children: FC = (): JSX.Element => {
 };
 
 const selectStyles = cva(
-  "py-3 px-4 pr-8 w-72 block border border-gray-200 bg-white ring-red-500 rounded-md text-sm focus:border-2 focus:outline-none",
+  "py-3 px-4 pr-8 w-72 block border border-gray-200 bg-white ring-red-500 rounded-md text-sm focus:border focus:outline-none",
   {
     variants: {
-      focusColor: {
-        blue: "focus:border-blue-500 focus:ring-blue-500",
-        orange: "focus:border-orange-500 focus:ring-orange-500",
-        indigo: "focus:border-indigo-500 focus:ring-indigo-500",
+      focus: {
+        primary: "focus:border-black focus:ring-black",
+        secondary: "focus:border-blue-500 focus:ring-blue-500",
+        tertiary: "focus:border-orange-500 focus:ring-orange-500",
+        quaternary: "focus:border-indigo-500 focus:ring-indigo-500",
       },
       fullWidth: {
         true: "w-full",
@@ -33,7 +34,7 @@ const selectStyles = cva(
 
 interface Props extends VariantProps<typeof selectStyles> {
   children: JSX.Element | JSX.Element[];
-  focusColor: "blue" | "orange" | "indigo";
+  focus: "primary" | "secondary" | "tertiary" | "quaternary";
   fullWidth?: boolean;
   hasError?: boolean;
   errorMessage?: string;
@@ -42,7 +43,7 @@ interface Props extends VariantProps<typeof selectStyles> {
 
 export const Select: FC<Props> = ({
   children = Children({}),
-  focusColor,
+  focus,
   fullWidth,
   hasError,
   errorMessage,
@@ -52,7 +53,7 @@ export const Select: FC<Props> = ({
   return (
     <>
       <select
-        className={`${selectStyles({ focusColor, fullWidth, hasError })} ${
+        className={`${selectStyles({ focus, fullWidth, hasError })} ${
           className || ""
         }`}
         {...props}

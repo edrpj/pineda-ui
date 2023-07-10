@@ -1,28 +1,40 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {Select} from "../components/Select";
+import { Meta, StoryObj } from "@storybook/react";
+import { Select } from "../components/Select";
 
-const meta = {
+const meta: Meta<typeof Select> = {
   title: "UI/Select",
-  component: Select
-} satisfies Meta<typeof Select>;
+  component: Select,
+  argTypes: {
+    focus: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary", "quaternary"],
+    },
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const FocusBlue: Story = {
+export const FocusPrimary: Story = {
   args: {
-    focusColor: "blue",
-  }
-}
+    focus: "primary",
+  },
+};
 
-export const FocusOrange: Story = {
+export const FocusSecondary: Story = {
   args: {
-    focusColor: "orange",
-  }
-}
+    focus: "secondary",
+  },
+};
 
-export const FocusIndigo: Story = {
+export const FocusTertiary: Story = {
   args: {
-    focusColor: "indigo",
-  }
-}
+    focus: "tertiary",
+  },
+};
+
+export const FocusQuaternary: Story = {
+  args: {
+    focus: "quaternary",
+  },
+};
