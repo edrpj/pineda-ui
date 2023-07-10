@@ -1,26 +1,26 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Spinner } from "../components/Spinner";
 
-const meta = {
+const meta: Meta<typeof Spinner>= {
   title: "UI/Spinner",
   component: Spinner,
   args: {
-    color: "indigo",
+    intent: "secondary",
   },
   argTypes: {
-    color: {
+    intent: {
       control: "select",
-      options: ["black", "blue", "red", "yellow", "orange", "indigo", "pink"],
+      options: ["primary", "secondary", "tertiary", "quaternary"],
     },
     size: {
       control: "select",
       options: ["small", "medium", "large", "extra-large"],
     },
   },
-} satisfies Meta<typeof Spinner>;
+} 
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Spinner>;
 
 export const Small: Story = {
   args: {

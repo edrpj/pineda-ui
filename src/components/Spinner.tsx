@@ -5,14 +5,11 @@ const spinnerStyles = cva(
   "animate-spin inline-block border-[3px] border-current border-t-transparent rounded-full",
   {
     variants: {
-      color: {
-        black: "text-black",
-        blue: "text-blue-600",
-        red: "text-red-600",
-        yellow: "text-yellow-600",
-        orange: "text-orange-600",
-        indigo: "text-indigo-600",
-        pink: "text-indigo-600",
+      intent: {
+        primary: "text-black",
+        secondary: "text-blue-500",
+        tertiary: "text-orange-500",
+        quaternary: "text-indigo-500",
       },
       size: {
         small: "w-4 h-4",
@@ -25,15 +22,15 @@ const spinnerStyles = cva(
 );
 
 interface Props extends VariantProps<typeof spinnerStyles> {
-  color: "black" | "blue" | "red" | "yellow" | "orange" | "indigo" | "pink";
+  intent: "primary" | "secondary" | "tertiary" | "quaternary";
   size: "small" | "medium" | "large" | "extra-large";
   className?: string;
 }
 
-export const Spinner: FC<Props> = ({ color, size, className }) => {
+export const Spinner: FC<Props> = ({ intent, size, className }) => {
   return (
     <div
-      className={`${spinnerStyles({ color, size })} ${className || ""}`}
+      className={`${spinnerStyles({ intent, size })} ${className || ""}`}
       role="status"
       aria-label="loading"
     >
