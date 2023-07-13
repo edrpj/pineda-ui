@@ -1,1 +1,1 @@
-export { Button, Spinner, Input } from "./components";
+export { Button, Spinner, Input, Select, Avatar } from "./components";
