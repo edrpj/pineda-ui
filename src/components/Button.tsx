@@ -7,7 +7,7 @@ const buttonStyles = cva("w-48 h-12 font-medium", {
       primary: "bg-black text-white hover:bg-brown-brand",
       "outline-primary":
         "bg-white text-black border border-gray-300 hover:border-black",
-      secondary: "bg-blue-500 text-white hover:bg-blue-500",
+      secondary: "bg-blue-500 text-white hover:bg-blue-400",
       "outline-secondary":
         "bg-white text-blue-600 border border-blue-600 hover:border-blue-800 hover:text-blue-800",
       tertiary: "bg-orange-500 text-white hover:bg-orange-400",
